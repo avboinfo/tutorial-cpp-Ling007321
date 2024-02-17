@@ -1,7 +1,7 @@
 /*
 * Legge da un file di input un vettore di stringhe
 * e produce un file di output con il vettore ordinato
-* Sandro Gallo - 5/2/2024
+* Chen JinXin - 5/2/2024
 */
 
 #include <iostream>
