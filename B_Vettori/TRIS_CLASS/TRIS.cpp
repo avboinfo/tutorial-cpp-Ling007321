@@ -78,6 +78,10 @@ class Tris{
             risultato=controlla_riga(i);
             if(risultato !=0)
                 return risultato;
+
+            risultato=controlla_diagonale(i);
+            if(risultato !=0)
+                return risultato;
         }
 
     }
@@ -123,9 +127,24 @@ private :
 
     }
 
-    /*int controlla_diagonale(int diag){
+    int controlla_diagonale(int diag){
+        int acc_uno=0;
+        int acc_due=0;
+        for(int i=0;i<3;i++){
+            int cella= griglia[i][i];
+             
+            if(cella==1)
+                acc_uno++;
+            else if(cella==2)
+                acc_due++;
+        }
+            if(acc_uno==3)
+                return 1;
+            if(acc_due==3)
+                return 2;
+            return 0;
     }
-    */
+    
 };
 
 
