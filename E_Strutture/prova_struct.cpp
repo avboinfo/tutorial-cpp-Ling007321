@@ -13,19 +13,37 @@ using namespace std;
 ** attraverso il nome unico della struttura.
 */
 
-struct numeri
+struct persona
 {
-    int val_uno;
-    float val_due;
+    string nome;
+    int eta;
+    int data;
 };
+
+typedef struct { int uno; int due;} COPPIA;
+//typedef int numeroanni;
+typedef struct {int tre;int quattro;}DATA;
 
 
 int main()
 {
-  struct numeri n;
-  n.val_uno = 100;
-  cout <<  "1) n.val_uno = " << n.val_uno << " - " << "n.val_due = " << n.val_due << endl;
-  n.val_due = 33.33;
-  cout <<  "2) n.val_uno = " << n.val_uno << " - " << "n.val_due = " << n.val_due << endl;
+  //numeroanni piccolo=6; // soppranome a un tipo particolare
+  struct persona gigi,gigietto;
+  COPPIA coppia_eta;
+  DATA coppia_data;
+  coppia_data.tre = 2007;
+  coppia_data.quattro = 20017;
+
+  coppia_eta.uno = 17;
+  coppia_eta.due = 7;
+  gigi.nome = "Luigi";
+  gigi.eta= coppia_eta.uno;
+  gigietto.nome = "Luigino";
+  gigi.data = coppia_data.tre;
+  gigietto.data=coppia_data.quattro;
+  gigietto.eta= coppia_eta.due;
+  cout <<  "Gigi si chiama "<<gigi.nome <<" , ha "<<gigi.eta<<" anni "<<" ed è nato nel "<<gigi.data<<endl;
+  
+  cout <<  "Gigietto si chiama "<<gigietto.nome <<" , ha "<<gigietto.eta<<" anni "" anni "<<" ed è nato nel "<<gigietto.data<<endl;
   return 0;
 }

@@ -11,7 +11,7 @@ using namespace std;
 ** nello stesso spazio, perciò non possono essere usati contemporaneamente.
 ** La struttura è grande quanto il più grande degli oggetti che può contenere.
 */
-
+//classe=Insieme di metodi(FUNZIONI) e attributi;
 union numero
 {
     int val_uno;
