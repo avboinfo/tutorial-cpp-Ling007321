@@ -26,6 +26,8 @@ int main()
 {
     Bicicletta x;
     x.presentati();
+    Bicicletta y(12,"Rosso");
+    y.presentati();
     //Bicicletta x(16,"verdino");
     //Bicicletta y(14,"rossastro");
 
