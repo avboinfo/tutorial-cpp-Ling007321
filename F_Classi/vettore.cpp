@@ -9,13 +9,14 @@ class Vettore
 {
 
 protected:
-    int dim, len;
+    int dim, len, delta;
     int *v; // Trova spazio per dim elementi e assegna a v.
 
 public:
-    Vettore(int d)
+    Vettore(int dim,int delta )
     {
-        dim = d;
+        this->dim = dim; //this èun puntatore a se stessi. utili quando devo chiamare l'attributo con lo stesso nome.
+        this->delta = delta;
         len = 0;
         v = new int[dim];
     }
@@ -24,8 +25,13 @@ public:
     {
         if (len == dim)
         {
-            cout << "Il vettore è pieno" << endl;
-            return;
+            int *nuovov = new int[dim + delta];
+            for (int i = 0; i < dim; i++)
+                nuovov[i] = v[i];
+            dim += delta;
+            /*cout<<"Il vettore è pieno"<<endl;
+            return;*/
+            v = nuovov;
         }
         v[len] = n;
         len++;
@@ -41,10 +47,9 @@ public:
 };
 int main(int argc, char const *argv[])
 {
-    Vettore vett(2);
-    vett.add(33);
-    vett.add(333);
+    Vettore vett(10,2); // ogni vett contiene un add. se metto 1 diventa full ,il 333 non entra.
+    for (int i = 0; i < 100; i++)
+        vett.add(i);
+
     vett.print();
-
 }
-
