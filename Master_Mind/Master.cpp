@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-#include <time>
+#include <ctime>
 class Master
 {
 private:
@@ -45,6 +45,7 @@ public:
     {
         numero_mosse = 0;
         ultima_mossa = "";
+        
     };
 
     void nuova_giocata()
@@ -60,6 +61,11 @@ public:
         numero_mosse++;// Legge anche spazi.Legge da consol e conserva nellultimamossa
     }
     void risultato_mossa(){
-
+        if(ultima_mossa==codice_segreto){
+            std::cout<<"Bravo!sei riuscito ad indovinare i numeri!"<<endl;
+        }
+        else if (numero_mosse==DIM_GIOCATA_VALIDA){
+            std::cout<<"Gg bro,ci hai provato,ma pultroppo hai finito le mosse"<<endl;
+        }
     }
 };
