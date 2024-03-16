@@ -42,6 +42,7 @@ public: // permette do usare il class fuori
             cout << endl;
         }
     }
+    
 
     bool giocatore_uno(int x, int y)
     {
