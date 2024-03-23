@@ -130,7 +130,10 @@ public:
                     break; // troviamo il valore che ci serve non abbiamo bisogno di andare oltre
                 }
             }
-            
+            if(strike==DIM_GIOCATA_VALIDA)
+            {
+                hai_vinto=true;
+            }
         }
 
         // Stampo il risultato della mia ricerca sul terminale
@@ -140,22 +143,27 @@ public:
     }
     
     bool puoi_continuare(){
-        if(hai_vinto==false||numero_mosse<9){
-            return true;
-        }else{
+        if(hai_vinto||numero_mosse>=NUMERO_MOSSE_CONSENTITE)
             return false;
-        }
+            return true;
+        
       }
 
     void situazione_finale(){
-         if (hai_vinto==true){
-            std::cout<<"Hai vinto!"<<std::endl;
-         }else{
-            std::cout<<"Hai perso!"<<std::endl;
-         }
+        if(hai_vinto)
+            std::cout<<"Hai vinto in "<<numero_mosse<<" mosse! "<<std::endl;
+            else{
+                std::cout<<"Hai perso,il codice segreto è: ";
+                for(id_t i=0;i<DIM_GIOCATA_VALIDA;i++)
+                {
+                    std::cout<<codice_segreto[i];
+                }
+                std::cout<<std::endl;
+            }
+        }
 
             
-    }
+    
 
 
 };
