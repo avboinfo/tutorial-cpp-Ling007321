@@ -22,7 +22,12 @@ int sommaN(int n, int n1)
 
 int main(int argc, char const *argv[])
 {
-    int somma = sommaN(10, 15);
+    int n,n1;
+    cout<<"Inserisci il primo num: "<<endl;
+    cin>>n;
+    cout<<"Sec: "<<endl;
+    cin>>n1;
+    int somma = sommaN(n, n1);
     cout << somma;
 
     return 0;
