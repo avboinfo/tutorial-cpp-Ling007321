@@ -6,12 +6,12 @@
 
 include<iostream> using namespace std;
 
-void ricorsione(string c, string s)
+void ricorsione(string c, string s,int n)
 {
     if (s[c] == c)
         return 1;
     else
-        return n + ricorsione(n - 1);
+        return n + ricorsione(n +1);
 }
 
 int main(int argc, char const *argv[])
