@@ -1,7 +1,7 @@
 /*
-** Pila.cpp
-** Classe Vettore - Chen JinXin - 06/04/2024
-Chen JinXin
+** Coda.cpp
+**  - Chen JinXin - 06/04/2024
+**3°CIN
 */
 #include <iostream>
 using namespace std;
