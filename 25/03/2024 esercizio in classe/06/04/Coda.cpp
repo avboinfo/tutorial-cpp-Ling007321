@@ -48,7 +48,7 @@ public:
 
     void stampa()
     {
-        cout << "Numeri in coda: " << name << " ; ";
+        cout << "Numeri in coda: " << nome << " ; ";
         for (int i = start; i < stop; i++)
             cout << v[i] << endl;
         cout << endl;
@@ -58,7 +58,7 @@ public:
 int main()
 {
 
-    ufficio_postale up = ufficio_postale("Saliceto");
+    UfficioPostale up = UfficioPostale("Saliceto");
     up.nuovoCliente('R');
     up.nuovoCliente('R');
     up.nuovoCliente('R');
