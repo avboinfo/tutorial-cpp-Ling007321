@@ -6,7 +6,7 @@
 */
 
 #include <iostream>
-#include "Coda.cpp"
+
 #include "2024_es_16.cpp"
 using namespace std;
 

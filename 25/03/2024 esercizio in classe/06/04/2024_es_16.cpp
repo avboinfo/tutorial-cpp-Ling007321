@@ -62,7 +62,11 @@ public:
     }
     void stampaTabellone()
     {
-        cout << "Tabellone dell'ufficio postale  " << nome << endl;
+        cout << "Persone in coda" <<endl;
+        cout << "nello sportello Spedizione ci sono " << nS << " persone" << endl;
+        cout << "nello sportello Ricezione ci sono " << nR << " persone" << endl;
+        cout << "nello sportello Finanziario ci sono " << nF << " persone" << endl;
+    
     }
 };
 /*
