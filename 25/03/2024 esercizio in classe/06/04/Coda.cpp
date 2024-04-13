@@ -3,6 +3,7 @@
 **  - Chen JinXin - 06/04/2024
 **3°CIN
 */
+
 #include <iostream>
 using namespace std;
 
@@ -54,19 +55,3 @@ public:
         cout << endl;
     }
 };
-
-int main()
-{
-
-    UfficioPostale up = UfficioPostale("Saliceto");
-    up.nuovoCliente('R');
-    up.nuovoCliente('R');
-    up.nuovoCliente('R');
-    up.nuovoCliente('R');
-    up.chiamaCliente('S');
-    up.nuovoCliente('R');
-    up.nuovoCliente('R');
-    up.nuovoCliente('R');
-    up.chiamaCliente('F');
-    up.stampa();
-}

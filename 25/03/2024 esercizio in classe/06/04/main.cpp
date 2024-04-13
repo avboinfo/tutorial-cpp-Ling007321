@@ -13,7 +13,7 @@ using namespace std;
 int main()
 {
 
-    ufficio_postale up = ufficio_postale("Saliceto");
+    UfficioPostale up = UfficioPostale("Saliceto");
     up.nuovoCliente('r');
     up.nuovoCliente('r');
     up.nuovoCliente('r');

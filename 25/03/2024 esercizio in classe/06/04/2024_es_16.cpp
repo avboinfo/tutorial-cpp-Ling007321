@@ -15,32 +15,30 @@ class UfficioPostale
 {
 private:
     string nome;
-    Coda cR, cS, cF;
-    int nR, nS, nF;
+    Coda cR = Coda("ricezione", 1000);
+    Coda cS = Coda("spedizione", 1000);
+    Coda cF = Coda("finanziario", 1000);
+    int nR = 0, nS = 0, nF = 0;
 
 public:
     UfficioPostale(string nome)
     {
         this->nome = nome;
-        cR = Coda("ricezione",1000);
-        cS = Coda("spedizione",1000);
-        cF = Coda("finanziario",1000);
-        nR = nS = nF = 100;
     }
     void nuovoCliente(char servizio)
     {
         switch (servizio)
         {
-        case 'r';
+        case 'r':
             cR.enter(nR++);
             break;
-            case 's';
+        case 's':
             cS.enter(nS++);
             break;
-            case 'f';
+        case 'f':
             cF.enter(nF++);
             break;
-            default:
+        default:
             cout << "Questo servizio te lo fai da solo" << endl;
         }
     }
@@ -49,27 +47,24 @@ public:
     {
         switch (servizio)
         {
-        case 'r';
+        case 'r':
             cR.exit();
 
-            case 's';
+        case 's':
             cS.exit();
 
-            case 'f';
+        case 'f':
             cF.exit();
 
-            default:
-            cout << "Questo servizio non èprevisto!!!" << endl
+        default:
+            cout << "Questo servizio non èprevisto!!!" << endl;
         }
     }
     void stampaTabellone()
     {
         cout << "Tabellone dell'ufficio postale  " << nome << endl;
-        cR->stampa;
-        cS->stampa;
-        cF->stampa;
     }
-}
+};
 /*
     int spedizione, ricezione, finanziario, cliente;
     Coda S = Coda(1000);
@@ -130,10 +125,3 @@ public:
     }
 };
 */
-int
-main(int argc, char const *argv[])
-{
-    ufficio_postale x;
-    x.sportelli();
-    return 0;
-}
