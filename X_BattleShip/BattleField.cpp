@@ -83,32 +83,4 @@ public:
     }
 };
 // DIM,SHIP,MISS,HIT,VOID
-int main(int argc, char const *argv[])
-{
-    srand(time(NULL));
-    BattleField mappa = BattleField(VOID);
-    BattleField campo = BattleField(VOID);
-    campo.placeHorizontalShip(3);
-    campo.placeVerticalShip(4);
-    campo.placeVerticalShip(2);
-    campo.placeHorizontalShip(5);
 
-    for (int i = 0; i < 20; i++)
-    {
-        int x = rand() % DIM;
-        int y = rand() % DIM;
-        if (campo.get(x, y) == HIT)
-            continue;
-        if (campo.get(x, y) == SHIP)
-        {
-            mappa.put(x, y, HIT);
-            campo.put(x, y, HIT);
-        }
-        else
-            mappa.put(x, y, MISS);
-    }
-    mappa.stampa();
-    campo.stampa();
-
-    return 0;
-}

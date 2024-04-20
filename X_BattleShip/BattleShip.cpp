@@ -4,6 +4,7 @@
 */
 
 #include <iostream>
+#include "BattleField.cpp"
 using namespace std;
 // DIM,SHIP,MISS,HIT,VOID
 class BattleShip
@@ -45,5 +46,5 @@ public:
         campo.stampa();
     }
 
-    return 0;
+   
 };
