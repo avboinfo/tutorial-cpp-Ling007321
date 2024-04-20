@@ -5,7 +5,12 @@
 
 #include <iostream>
 using namespace std;
+// DIM,SHIP,MISS,HIT,VOID
 const int DIM = 10;
+const char SHIP = 'X';
+const char MISS = 'W';
+const char HIT = '*';
+const char VOID = '-';
 
 class Matrice
 {
@@ -65,7 +70,7 @@ public:
         int x = rand() % (DIM);
         int y = rand() % (DIM - len);
         for (int i = 0; i < len; i++)
-            m[x][y + i] = 'O';
+            m[x][y + i] = SHIP;
     }
     void placeVerticalShip(int len)
     {
@@ -74,28 +79,36 @@ public:
         int x = rand() % (DIM - len);
         int y = rand() % (DIM);
         for (int i = 0; i < len; i++)
-            m[x + i][y] = 'O';
+            m[x + i][y] = SHIP;
     }
 };
-
+// DIM,SHIP,MISS,HIT,VOID
 int main(int argc, char const *argv[])
 {
     srand(time(NULL));
-    Matrice mappa = Matrice('-');
-    Matrice campo = Matrice('.');
+    Matrice mappa = Matrice(VOID);
+    Matrice campo = Matrice(VOID);
     campo.placeHorizontalShip(3);
     campo.placeVerticalShip(4);
     campo.placeVerticalShip(2);
-    campo.placeHorizontalShip(1);
+    campo.placeHorizontalShip(5);
 
     for (int i = 0; i < 20; i++)
     {
         int x = rand() % DIM;
         int y = rand() % DIM;
-        if (campo.get(x, y) == 'O')
-            mappa.put(x, y, '*');
+        if (campo.get(x, y) == HIT)
+            continue;
+        if (campo.get(x, y) == SHIP)
+        {
+            mappa.put(x, y, HIT);
+            campo.put(x, y, HIT);
+        }
+        else
+            mappa.put(x, y, MISS);
     }
     mappa.stampa();
+    campo.stampa();
 
     return 0;
 }
