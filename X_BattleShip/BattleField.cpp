@@ -1,5 +1,5 @@
 /*
-**Matrice.cpp una classe definita da noi che spupazza le matrice come nessuno mai
+**BattleField.cpp una classe definita da noi che spupazza le BattleField come nessuno mai
 **Chen JinXin _13/04/2024
 */
 
@@ -8,23 +8,23 @@ using namespace std;
 // DIM,SHIP,MISS,HIT,VOID
 const int DIM = 10;
 const char SHIP = 'X';
-const char MISS = 'W';
+const char MISS = '.';
 const char HIT = '*';
 const char VOID = '-';
 
-class Matrice
+class BattleField
 {
 private:
     char m[DIM][DIM];
 
 public:
-    Matrice()
+    BattleField()
     {
         for (int i = 0; i < DIM; i++)
             for (int j = 0; j < DIM; j++)
                 m[i][j] = 97 + rand() % 26;
     }
-    Matrice(char c)
+    BattleField(char c)
     {
         for (int i = 0; i < DIM; i++)
             for (int j = 0; j < DIM; j++)
@@ -86,8 +86,8 @@ public:
 int main(int argc, char const *argv[])
 {
     srand(time(NULL));
-    Matrice mappa = Matrice(VOID);
-    Matrice campo = Matrice(VOID);
+    BattleField mappa = BattleField(VOID);
+    BattleField campo = BattleField(VOID);
     campo.placeHorizontalShip(3);
     campo.placeVerticalShip(4);
     campo.placeVerticalShip(2);
