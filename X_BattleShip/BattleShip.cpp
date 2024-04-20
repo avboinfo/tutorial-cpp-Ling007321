@@ -43,8 +43,25 @@ public:
                 mappa.put(x, y, MISS);
         }
         mappa.stampa();
+
+        ask();
+
+        mappa.stampa();
         campo.stampa();
     }
 
-   
+    void ask()
+    {
+        cout << "Inserisci le coordinate di  riga e colonna in cui sganciare la bomba:  " << endl;
+        int x, y;
+        cin >> x;
+        cin >> y;
+        if (campo.get(x, y) == SHIP)
+        {
+            mappa.put(x, y, HIT);
+            campo.put(x, y, HIT);
+        }
+        else
+            mappa.put(x, y, MISS);
+    }
 };
