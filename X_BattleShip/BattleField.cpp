@@ -1,6 +1,6 @@
 /*
 **BattleField.cpp una classe definita da noi che spupazza le BattleField come nessuno mai
-**Chen JinXin _13/04/2024
+**Chen JinXin _23/04/2024
 */
 
 #include <iostream>
