@@ -25,7 +25,7 @@ int main()
     for (int i = 0; i < N; i++)
     {
         if (P[i] < P[min_idx])
-            min_idx = 1;
+            min_idx = i;
     }
     int idx, idx_next;
     for (int i = 0; i < N - 1; i++)
@@ -41,10 +41,11 @@ int main()
     }
     if(min_idx==0){
             cout<<0<<endl;
+            return 0;
         }
       
 
-    cout << N - min_idx - 1 << endl;
+    cout << N - min_idx  << endl;
 
     return 0;
 }
