@@ -7,10 +7,11 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
     // uncomment the two following lines if you want to read/write from files
-    // ifstream cin("input.txt");
-    // ofstream cout("output.txt");
+    ifstream cin("input.txt");
+    ofstream cout("output.txt");
 
     int N;
     cin >> N;
@@ -18,22 +19,32 @@ int main() {
     vector<int> P(N);
     for (int i = 0; i < N; ++i)
         cin >> P[i];
-
-    int K = 0;
-    for(int j=0;j<N;j++){
-        if(P[j]>P[j+1]){
-        P[j]=P[j+N];
-        K++;
-
-    }
-
-
-    }
-    
+        
+  int min_idx=0;
     // INSERT YOUR CODE HERE
+    for (int i = 0; i < N; i++)
+    {
+        if (P[i] < P[min_idx])
+            min_idx = 1;
+    }
+    int idx, idx_next;
+    for (int i = 0; i < N - 1; i++)
+    {
+        idx = (i + min_idx) % N;
+        idx_next = (i + min_idx + 1) % N;
+        if (P[idx] > P[idx_next])
+        {
+            cout << -1 << endl;
+            return 0;
+        }
+        /* code */
+    }
+    if(min_idx==0){
+            cout<<0<<endl;
+        }
+      
 
-
-    cout << K << endl;
+    cout << N - min_idx - 1 << endl;
 
     return 0;
 }
