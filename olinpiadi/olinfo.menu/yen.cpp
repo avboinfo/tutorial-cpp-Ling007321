@@ -11,25 +11,26 @@ vector<int> P(1);
 
 vector<int> allyoucaneat()
 {
-    vector<int> R(1);
+    int last_remain = B;
 
-    vector<vector<int>> plates;
-    for (int i = 0; i < P.size(); i++)
+    v for (int i = 0; i < P.size(); i++)
     {
         if (P[i] > B)
             continue;
-            int remain=B;
+        int remain = B;
         vector<int> current;
         current.push_back(P[i]);
-        remain -=P(i);  
-        for(int j=i+1;j<P.size();j++){
-            if(P[j]>remain)continue;
+        remain -= P(i);
+        for (int j = i + 1; j < P.size(); j++)
+        {
+            if (P[j] > remain)
+                continue;
             current.push_back(P[j]);
 
-            remain -=P[j];
-
+            remain -= P[j];
         }
-        if(remain==0) return current;
+        if (remain == 0)
+            return current;
         plates.push_back(current);
     }
     for (int i = 0; i < P.size; i++)
