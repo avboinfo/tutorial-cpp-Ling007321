@@ -16,8 +16,8 @@ int main()
     cin >> A >> B >> T;
     long long g_interi = T / 24;
     long long tempo_online = B - A;
-    long long left_over = te, po_online * g_interi;
-    T = T - _interi * 24;
+    long long left_over = tempo_online * g_interi;
+    T = T - g_interi * 24;
     T = T - (24 - tempo_online);
     if (T < 0)
         T = 0;
